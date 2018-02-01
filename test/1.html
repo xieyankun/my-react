@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+
+
+<script type="text/babel">
+  window.onload = function(){
+    var oDiv = document.getElementById('example')
+
+    // ReactDOM.render(
+    //   <h1>Hello, world!</h1>,
+    //   oDiv
+    // );
+
+    // var names = ['Alice', 'Emily', 'Kate'];
+    // ReactDOM.render(
+    //   <div>
+    //     {
+    //       names.map( name => <div>Hello, {name}!</div> )
+    //     }
+    //   </div>,
+    //   oDiv
+    // );
+
+    var arr = [
+      <h1>Hello world!</h1>,
+      <h2>React is awesome</h2>,
+    ];
+    ReactDOM.render(
+      <div>{arr}</div>,
+      oDiv
+    );
+  }
+  
+</script>
+</body>
+</html>

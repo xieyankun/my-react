@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>react state</title>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+
+  <script type="text/babel">
+    class TodoList extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+
+      render() {
+        <p>{this.props.items}</p>
+      }
+    }
+    
+		class TodoApp extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { items: [], text: '' };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+
+			render() {
+				return (
+					<div>
+            <h3>TODO</h3>
+            <TodoList items={this.state.items} />
+            <form onSubmit={this.handleSubmit}>
+              <input
+                onChange={this.handleChange}
+                value={this.state.text}
+              />
+              <button>
+                Add #{this.state.items.length + 1}
+              </button>
+            </form>
+          </div>
+				)
+			}	
+		}
+		
+		ReactDOM.render(
+			<TodoApp></TodoApp >,
+      document.getElementById('app')
+		)
+	</script>
+</body>
+</html>

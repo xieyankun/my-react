@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+
+
+<script type="text/babel">
+  
+  class Item extends React.Component{
+    constructor(...args){
+        super(...args)
+        this.state = {
+            color: 'red'
+        }
+    }
+
+    // getInitialState() {
+    //     alert('init')
+    //     return {
+    //         color: 'red'
+    //     }
+    // }
+
+    render(){
+      return <h1 style={this.state}>Hello, world!</h1>;
+    }
+
+    componentWillMount() {
+        alert('will')
+    }
+
+    componentDidMount() {
+        alert('did')
+    }
+  }
+
+
+  window.onload = function(){
+    var oDiv = document.getElementById('example')
+
+    ReactDOM.render(
+      <Item></Item>,
+      oDiv
+    );
+  }
+  
+</script>
+</body>
+</html>

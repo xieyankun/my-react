@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+
+
+<script type="text/babel">
+  
+  class Item extends React.Component{
+    constructor(...args){
+      super(...args)
+    }
+    
+    render(){
+      return <h1>{this.props.str}</h1>;
+    }
+  }
+
+  class List extends React.Component{
+    constructor(...args){
+      super(...args)
+    }
+
+    render(){
+			// let aItems = []
+			// for (let i = 0; i < this.props.arr.length; i++) {
+			// 	const element = this.props.arr[i];
+			// 	aItems.push(<Item str={"Hello " + element}></Item>)	
+			// }
+			let aItems =this.props.arr.map(a=><Item str={"Hello " + a}></Item>)
+      return <ul>
+        {aItems}
+      </ul>
+    }
+  }
+
+
+  window.onload = function(){
+    var oDiv = document.getElementById('example')
+
+    ReactDOM.render(
+      <List arr={['aaaaaa', 'bbbbbb', 'cccccc']}></List>,
+      oDiv
+    );
+  }
+  
+</script>
+</body>
+</html>

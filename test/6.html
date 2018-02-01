@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+	
+
+<script type="text/babel">
+  
+  class Item extends React.Component{
+    constructor(...args){
+      super(...args)
+    }
+    // this.refs.childp
+    render(){
+      // return <p ref="childp">Hello,  world!</p>;
+			return <ul>
+								<li key="1">1</li>
+								<li key="2">2</li>
+								<li key="3">3</li>
+							</ul>
+    }
+  }
+
+
+  window.onload = function(){
+    var oDiv = document.getElementById('example')
+		let styleObj = {
+			color: 'red',
+			border: '1px #000 solid'
+		}
+
+		let rawHTML = {
+			__html: '<h1>Im inner,  world!</h1>;'
+		}
+
+    ReactDOM.render(
+			// <div style={styleObj} dangerouslySetInnerHTML={rawHTML}></div>,
+			<div style={styleObj}>
+				<Item></Item>
+			</div>,
+      oDiv
+    );
+  }
+  
+</script>
+</body>
+</html>
