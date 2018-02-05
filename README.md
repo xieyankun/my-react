@@ -1,3 +1,7 @@
 
-### 案例
-1. Game（井字游戏）
+### 模板
+启动：
+```
+npm run start -- app=项目名称
+如：npm run start -- app=Test
+```
