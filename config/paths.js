@@ -40,7 +40,7 @@ function getServedPath(appPackageJson) {
 
 let appname = process.argv.find(arg => arg.indexOf('app=') === 0);
 appname = appname ? appname.split('=')[1] : '';
-
+console.log('process.argv:', process.argv)
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
