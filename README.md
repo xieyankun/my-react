@@ -7,4 +7,6 @@ npm run start -- app=项目名称
 ```
 
 test1
+test2
+test3
 
