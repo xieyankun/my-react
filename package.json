@@ -91,5 +91,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/xieyankun/my-react.git",
+  "license": "MIT"
 }
